@@ -1,7 +1,14 @@
 JAVA
 
+Topics 
+
 Class in Java
 ------------
+	1.Members of class
+	2. Dafault Constructor
+
+# Members of class
+
 Group of Objects with common property
 Blueprint from which Objects are created
 Class in Java contains fields 
@@ -16,3 +23,35 @@ Class in Java contains fields
 			  Default constructor is new class_name()
 	Blocks
 	Nested Class and interfaces
+
+
+# Default Constructor
+mybox is just a variable at first - > Box mybox
+with new Box() , the memory is initialized 
+
+class Box
+{
+
+	double width;
+	double height;
+	double depth;
+
+}
+
+// Class is Box
+// Created new Object mybox
+
+Box mybox;
+mybox = new Box();
+Or 
+Box mybox = new Box();
+
++--------+          +-----------+
+|mybox   |          |width= 0.0 |
+|        +--------->+           |
+|        |          +-----------+
++--------+          |height= 0.0|
+                    +-----------+
+                    |depth=  0.0|
+                    +-----------+
+
