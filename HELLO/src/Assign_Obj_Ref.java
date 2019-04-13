@@ -1,6 +1,7 @@
 // Assign Object Reference Variable
 // We will see how we can assign two object pointing to same variable
 // Both b1 and b2 are pointing to height
+
 class Box {
 	
 	double width;
