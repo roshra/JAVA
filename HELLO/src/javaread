@@ -1,0 +1,18 @@
+JAVA
+
+Class in Java
+------------
+Group of Objects with common property
+Blueprint from which Objects are created
+Class in Java contains fields 
+	Fields  	= Its like a data member/Instance variable 
+		  	Its created instide the class but outside the method
+		  	Doesnt get memory at compile time
+		  	would get memory at run time only
+		  	int x = 5;
+
+	Methods 	= Its like a function
+	Constructors 	= Defines what happens when object of class is created
+			  Default constructor is new class_name()
+	Blocks
+	Nested Class and interfaces
