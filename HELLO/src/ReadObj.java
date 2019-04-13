@@ -1,4 +1,3 @@
-
 public class ReadObj {
 
 	int x = 5;
