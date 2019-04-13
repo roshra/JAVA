@@ -38,8 +38,8 @@ class Box
 
 }
 
-// Class is Box
-// Created new Object mybox
+// Class =  Box
+// New Object = mybox
 
 Box mybox;
 mybox = new Box();
