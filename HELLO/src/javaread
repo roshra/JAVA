@@ -4,8 +4,10 @@ Topics
 
 Class in Java
 ------------
-	1.Members of class
+	1. Members of class
 	2. Dafault Constructor
+	3. Java Class Attributes
+	4. Static Method and Public Method 
 
 # Members of class
 
@@ -54,4 +56,14 @@ Box mybox = new Box();
                     +-----------+
                     |depth=  0.0|
                     +-----------+
+
+
+$ Java Class Atributes 
+Concept is a class can have multiple attributes like 
+age, first name and last name etc
+
+
+# Static Method and Public Method
+Static methods can be accessed by without an object 
+Public methids can only be accessed by object
 
