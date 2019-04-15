@@ -7,4 +7,5 @@ public class ReadObj {
 		System.out.println(MyObj.x);
 
 	}
+
 }
