@@ -1,6 +1,7 @@
 // Static Method and Public Method
 // Static methods can be accessed by without an object 
 // Public method can only be accessed by object
+
  
 public class Public_Static_Method {
 
