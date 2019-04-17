@@ -66,4 +66,114 @@ age, first name and last name etc
 # Static Method and Public Method
 Static methods can be accessed by without an object 
 Public methids can only be accessed by object
+You can split the 
 
+
+# Class Access modifiers
+Public   : The class is accessible by any other class
+Default  : The class is only accessible by class in same package
+
+Public 
+public class MyClass {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+
+Default 
+class MyClass {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+     }
+   }
+ } 
+
+Class attributes, methods, constructors have folloing modifiers
+
+Public : The code is accessible for all classes 
+Private : The code is accessible only within the same class
+Default : The code is accessible only in the same package
+Protected : The code is accessible in the same package and subclass
+
+
+
+Public attribute :
+/* Code from filename: Person.java 
+public class Person {
+  public String fname = "John";
+  public String lname = "Doe";
+  public String email = "john@doe.com";
+  public int age = 24;
+}
+*/
+
+class MyClass {
+  public static void main(String[] args) {
+    Person myObj = new Person(); 
+    System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+    System.out.println("Email: " + myObj.email);
+    System.out.println("Age: " + myObj.age);
+  }
+}
+
+
+Private attribute:
+
+public class Person {
+  private String fname = "John";
+  private String lname = "Doe";
+  private String email = "john@doe.com";
+  private int age = 24;
+  
+  public static void main(String[] args) {
+    Person myObj = new Person();
+    System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+    System.out.println("Email: " + myObj.email);
+    System.out.println("Age: " + myObj.age);
+  }
+}
+
+Default attribute:
+
+class Person {
+  String fname = "John";
+  String lname = "Doe";
+  String email = "john@doe.com";
+  int age = 24;
+  
+  public static void main(String[] args) {
+    Person myObj = new Person();
+    System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+    System.out.println("Email: " + myObj.email);
+    System.out.println("Age: " + myObj.age);
+  }
+}
+Protected :
+
+class Person {
+  protected String fname = "John";
+  protected String lname = "Doe";
+  protected String email = "john@doe.com";
+  protected int age = 24;
+}
+
+class Student extends Person {
+  private int graduationYear = 2018;
+  public static void main(String[] args) {
+    Student myObj = new Student();
+    System.out.println("Name: " + myObj.fname + " " + myObj.lname);
+    System.out.println("Email: " + myObj.email);
+    System.out.println("Age: " + myObj.age);
+    System.out.println("Graduation Year: " + myObj.graduationYear);
+  }
+}
+
+Final		: 	Attributes and methods cannot be overridden/modified
+
+Static		: 	Attributes and methods belongs to the class, rather than an object
+
+Abstract	: 	Can only be used in an abstract class, and can only be used on methods. The method does not have a body, for example abstract void run();. The body is provided by the subclass (inherited from). You will learn more about inheritance in the Inheritance chapter
+
+Transient 	: Attributes and methods are skipped when serializing the object containing them
+
+Synchronized	: 	Methods can only be accessed by one thread at a time
+Volatile	The value of an attribute is not cached thread-locally, and is always read from the "main memory"
