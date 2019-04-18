@@ -189,4 +189,33 @@ public class MyClass {
     myObj.PI = 25; // will generate an error: cannot assign a value to a final variable
     System.out.println(myObj.x); 
   }
-}
+
+# Lamda Expressions 
+
+Two constucts 
+	Lambda expression	
+	Functional Interface
+
+Lambda expression:
+Anonymous method
+This method is not executed on its own 
+but its used to implement method defined by Functional Interface
+Lamda expressions Result in anonymous class
+Lamda expressions are refered as closures
+
+Functional Interface:
+Its interface that contains only one abstract method
+The functional interace represents a single action
+Standerd interface Runnable is functional interface because it defines only one method run()
+Therefore run() defines action of runnable
+Lambda expression can only be in context in which target type is specified 
+Functional interface is refered to as of SAM (Single Abstract Method)type 
+
+Lambda expression introduces syntax + new operater called arrow operator -> 
+syntax = 
+Left Side -> Right Side
+parameter -> lambda body
+
+Left Side specifies any parameters specified by lambda expression, If no parameter is needed an empty parameter list is used
+Right side is lambda body 
+
