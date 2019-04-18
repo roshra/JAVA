@@ -190,6 +190,47 @@ public class MyClass {
     System.out.println(myObj.x); 
   }
 
+
+# Java Interface 
+Its another way to achieve abstraction
+An interface is a complete "abstract class"
+used to group related methods with empty bodies
+
+// Interfaces
+
+interface Animal {
+
+public void animalSound(); // Interface method does not have a body
+public void run()	   // Interface method does not have a body
+To access the interface Animal method, interface must be implemented
+by another class with implements keyword
+Body of interface must be provided by "implement" class
+
+}
+
+
+Like abstract classes, interfaces cannot be used to create objects (in the example above, it is not possible to create an "Animal" object in the MyMainClass)
+
+Interface methods does not have a body - the body is provided by the "implement" class
+
+On implementation of an interface, you must override all of its methods
+
+Interface methods are by default abstract and public
+
+Interface attributes are by default public, static and final
+
+An interface cannot contain a constructor (as it cannot be used to create objects)
+
+Why And When To Use Interfaces?
+
+To achieve security - hide certain details and only show the important details of an object (interface).
+
+Java does not support "multiple inheritance" (a class can only inherit from one superclass). 
+
+However, it can be achieved with interfaces, because the class can implement multiple interfaces. 
+
+Note: To implement multiple interfaces, separate them with a comma
+
 # Lamda Expressions 
 
 Two constucts 
@@ -205,6 +246,11 @@ Lamda expressions are refered as closures
 
 Functional Interface:
 Its interface that contains only one abstract method
+Only one abstract method
+abstract(existing in thought or as an idea but not having a physical or concrete existence.)
+default method = Posible to specify default behaviour for a method
+declare in an interface
+Got to Java Interface to learn more
 The functional interace represents a single action
 Standerd interface Runnable is functional interface because it defines only one method run()
 Therefore run() defines action of runnable
@@ -215,7 +261,35 @@ Lambda expression introduces syntax + new operater called arrow operator ->
 syntax = 
 Left Side -> Right Side
 parameter -> lambda body
+		Lambda body is of two types
+			1. single expression
+			2. block of code
 
 Left Side specifies any parameters specified by lambda expression, If no parameter is needed an empty parameter list is used
-Right side is lambda body 
+Right side is lambda body which specifies action of lambda expression
+The -> can be verbalized as "becomes" or "goes to"
+ 
+simplest kind of lambda expression
+() -> 123.45
+Here left side is parameter , which takes no parameters
+and parameter list is empty
+It returns constant value 123.45
+ .
+. . its similar to following method
+
+double myMeth() {return 123.45 } 
+
+Another example of lambda expression
+This lambda expression obtain pseudo-random value from Math.random()
+multiplies it by 100
+return results
+() -> Math.random() * 100
+
+When lambda expression require a parameter it is specified in the parameter list
+on left side of the lambda operator
+This lambda epression returns true if value of parameter n is even
+You can specify many parameters
+
+(n) -> (n % 2) == 0
+
 
