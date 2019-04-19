@@ -231,6 +231,25 @@ However, it can be achieved with interfaces, because the class can implement mul
 
 Note: To implement multiple interfaces, separate them with a comma
 
+Its now possible to specify default behaviour for a method in an interface called default method
+
+Here method getValue() is implicitly abstracted 
+Its method defined by MyNumber
+MyNumber is functional interface
+The function interface is defined by getValue() method
+
+Lamdba expression is not defined on its own , but it forms implementation of abstract method defined by functional interface that specify its target type
+example : LambdaExpression_MyNumber
+
+
+interface MyNumber {
+
+	double getValue();
+
+}
+
+
+
 # Lamda Expressions 
 
 Two constucts 
@@ -265,7 +284,8 @@ parameter -> lambda body
 			1. single expression
 			2. block of code
 
-Left Side specifies any parameters specified by lambda expression, If no parameter is needed an empty parameter list is used
+Left Side specifies any parameters specified by lambda expression, 
+If no parameter is needed an empty parameter list is used
 Right side is lambda body which specifies action of lambda expression
 The -> can be verbalized as "becomes" or "goes to"
  
@@ -292,4 +312,45 @@ You can specify many parameters
 
 (n) -> (n % 2) == 0
 
+(n) -> (n % 2) == 0 , where n is not specified 
+Rather its type is inferred from the parameter type of test() as defined in NumericTest interface, which is int
+Its also possible to explicitly specify the type of parameter in lambda expression
+This is also a valid way (int n) -> (n%2) == 0
+Here n is explicitly specified as int - its not necessary but you can do it at this layer too
+The program defines two lambda expressions that are compatible with test() method of functional interface NumericTest
+The first lambda expression is isEven and second called lambda expression is isNonNeg
+In each case value of parameter n is tested, because each lambda expression is compatible with test() method and executed through 
+NumericTest interface
+When its only one parameter, its not necessary to place parentheses on left side of lambda expression , which is lambda body
+n -> (n%2) == 0
+Next program we can check lambda expression with two parameters 
 
+Program which display lambda expression with single parameter 
+Promgram : LambdaExpression_withParameters
+a
+// Interface  
+interface NumericTest{
+	// Single method without body
+	boolean test(int n);
+}
+
+public class LambdaExpression_withParameters {
+
+	public static void main(String[] args) {
+	
+		// Lambda expression
+		NumericTest isEven = (n) -> (n%2) == 0;
+		isEven.test(10);
+		System.out.println("wow its " + isEven.test(10) + "\n");
+		if(!isEven.test(9)) System.out.println("9 is not even \n");
+		if(isEven.test(10)) System.out.println("10 is even \n");
+		
+		// Test if number is non-negative
+		// Create another reference 
+		NumericTest isNonNeg = (n) -> n >= 0;
+		if(isNonNeg.test(1)) System.out.println("1 is non-negative");
+		if(isNonNeg.test(-1)) System.out.println("-1 is negative");
+
+	}
+
+}
