@@ -374,8 +374,58 @@ public class LambdaExpression_WithTwoParameters {
 
 	}
 
+   }
 }
 
 # Block Lambda Expression
 
+# Generic functional interface
+Earlier program we used two interfaces 
+NumericFunc and StringFunc
+Both defines method func(), type of parameter and return type was 
+int in one case and String is other case.
+Instead of having two functional interfaces whose methods differs 
+only in their data types, its possible to declare generic interface that can be used to handel both circumstances  
+
+interface SomeFunc<T>{
+	T func(T t);
 }
+
+public class Lambda_Expression_Generic_Functional_Interface {
+
+	public static void main(String[] args) {
+		// Lambda expression string based version
+		SomeFunc<String> reverse = (str) -> {
+			String result = "";
+			for(int i = str.length()-1; i >=0; i--)
+				result = result + str.charAt(i);
+			return result;
+			
+		};
+
+		System.out.println("Lambda reverse is " + reverse.func("GEETHIKA"));
+		
+		// Lambda expression integer based version of SomeFunc
+		SomeFunc<Integer> factorial = (n) -> {
+			int result = 1;
+			for(int i = 1; i <=n; i++)
+				result = result * i;
+			return result;
+		};
+		
+		System.out.println("Lambda factorial is " + factorial.func(5));
+	}
+
+}
+
+Here T specifies both the 
+1. return type
+2. parameter type of func()
+that means its compatible with any lambda expression that takes one parameter 
+and returns a value of same type
+
+SomeFunc is used to provide a reference to tow different types of lambdas 
+The first use type is String 
+The second use type Integer 
+Thus the same functional interface can be used to refer to the reverse lambda
+Only the type argument passed to SomeFunc differs 
