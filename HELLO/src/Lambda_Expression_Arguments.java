@@ -10,7 +10,6 @@ interface StringFuncmine {
 	// stringop is a method, which can take two references
 	// First reference : -> this parameter can "receive a reference" to any instance of StringFuncmine
 	// including one created by lambda expression
-	   
 	
 	static String stringop(StringFuncmine sf, String s) {
 		return sf.func(s);
